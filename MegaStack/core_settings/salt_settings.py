@@ -1,0 +1,7 @@
+import os
+
+SALT_USER = os.getenv('SALT_USER')
+SALT_PASSWORD = os.getenv('SALT_PASSWORD')
+SALT_REST_URL = os.getenv('SALT_REST_URL')
+SALT_ROSTER_PATH = os.getenv('SALT_ROSTER_PATH')
+SALT_PILLAR_DIR = os.getenv('SALT_PILLAR_DIR')

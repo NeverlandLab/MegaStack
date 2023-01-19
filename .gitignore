@@ -1,0 +1,10 @@
+venv
+*.sqlite3
+logs
+.idea
+.env
+.pytest_cache
+assets
+report.html
+allure
+dev-files

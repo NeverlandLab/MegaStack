@@ -21,3 +21,6 @@ run:
 
 test:
 	pytest -v -p no:warnings --html=report.html --alluredir=allure
+
+collect-static:
+	python ./manage.py collectstatic --noinput

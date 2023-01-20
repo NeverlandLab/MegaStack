@@ -24,3 +24,9 @@ test:
 
 collect-static:
 	python ./manage.py collectstatic --noinput
+
+release-docker:
+	docker build -t ccr.ccs.tencentyun.com/megalab/mega-stack-openresty . -f ./support-files/docker/megastack-openresty/Dockerfile
+	docker build -t ccr.ccs.tencentyun.com/megalab/mega-stack . -f ./support-files/docker/megastack/Dockerfile
+	docker push ccr.ccs.tencentyun.com/megalab/mega-stack
+	docker push ccr.ccs.tencentyun.com/megalab/mega-stack-openresty

@@ -1,0 +1,2 @@
+docker run --rm -it --name mega-stack-migrate --env-file ./.env ccr.ccs.tencentyun.com/megalab/mega-stack \
+    python ./manage.py makemigrations && python ./manage.py migrate

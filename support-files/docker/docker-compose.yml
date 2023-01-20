@@ -5,7 +5,7 @@ services:
     container_name: openresty
     restart: always
     ports:
-      - 8080:8080
+      - ${MEGA_STACK_WEB_PORT:-8080}:8080
     volumes:
       - ${PWD}/config/megastack.conf:/opt/bitnami/openresty/nginx/conf/server_blocks/megastack.conf:ro
 

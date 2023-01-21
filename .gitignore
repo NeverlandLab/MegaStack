@@ -4,7 +4,10 @@ logs
 .idea
 .env
 .pytest_cache
-assets
 report.html
 allure
 dev-files
+node_modules
+dist
+staticfiles
+static

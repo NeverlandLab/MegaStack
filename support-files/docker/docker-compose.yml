@@ -2,7 +2,6 @@ version: '3'
 services:
   openresty:
     image: ccr.ccs.tencentyun.com/megalab/mega-stack-openresty
-    container_name: openresty
     restart: always
     ports:
       - ${MEGA_STACK_WEB_PORT:-8080}:8080
@@ -11,7 +10,6 @@ services:
 
   mega-stack:
     image: ccr.ccs.tencentyun.com/megalab/mega-stack
-    container_name: mega-stack
     command: daphne -b 0.0.0.0 -p 8000 MegaStack.asgi:application
     restart: always
     volumes:
@@ -22,7 +20,6 @@ services:
 
   mega-stack-celery:
     image: ccr.ccs.tencentyun.com/megalab/mega-stack
-    container_name: mega-stack-celery
     command: celery -A MegaStack worker --loglevel=info --concurrency=1
     restart: always
     volumes:
@@ -31,7 +28,6 @@ services:
 
   mega-stack-celery-beat:
     image: ccr.ccs.tencentyun.com/megalab/mega-stack
-    container_name: mega-stack-celery-beat
     command: celery -A MegaStack beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
     restart: always
     volumes:
